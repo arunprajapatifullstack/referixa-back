@@ -1,0 +1,1 @@
+{"version":3,"file":"plan-limits.js","sourceRoot":"","sources":["../../src/common/plan-limits.ts"],"names":[],"mappings":";;;AAAa,QAAA,WAAW,GAA6D;IACnF,IAAI,EAAE,EAAE,SAAS,EAAE,EAAE,EAAE,SAAS,EAAE,CAAC,EAAE;IACrC,GAAG,EAAE,EAAE,SAAS,EAAE,GAAG,EAAE,SAAS,EAAE,IAAI,EAAE;IACxC,UAAU,EAAE,EAAE,SAAS,EAAE,MAAM,EAAE,SAAS,EAAE,MAAM,EAAE;CACrD,CAAC"}
