@@ -1,17 +1,10 @@
-FROM node:20-alpine AS builder
+FROM node:20-slim
+RUN apt-get update -y && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-FROM node:20-alpine
-WORKDIR /app
-RUN apk add --no-cache openssl
-COPY package*.json ./
-RUN npm ci --production
-COPY --from=builder /app/dist ./dist
+RUN npm install
 COPY prisma ./prisma
-RUN npx prisma generate
+COPY . .
+RUN npx prisma generate && npm run build
 EXPOSE 4000
-CMD ["node", "dist/main"]
+CMD npx prisma db push && node dist/main
